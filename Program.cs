@@ -14,6 +14,10 @@ if (num1 > num2)
 {
     Console.WriteLine(num1);
 }
+else if (num1 == num2)
+{
+    Console.WriteLine('Цифры равны');
+}
 else
 {
     Console.WriteLine(num2);
