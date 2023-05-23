@@ -1,24 +1,29 @@
-﻿// Напишите программу, которая выводит
-//  случайное число из отрезка [10, 99]
-//   и показывает наибольшую цифру числа.
-// Например:
-// 78 -> 8    78/10=7;  78%10=8;
-// 12-> 2
-// 85 -> 8
-int num = new Random().Next(10,100);
-Console.WriteLine(num);
+﻿// Задача 10: Напишите программу, которая принимает на вход трёхзначное число
+// и на выходе показывает вторую цифру этого числа.
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
 
-int num1= num/10;
-int num2 = num%10;
-if (num1 > num2)
+int number = ReadInt("Введите трехзначное число: ");
+int amount = number.ToString().Length;
+
+if (amount < 3 || amount > 3)
 {
-    Console.WriteLine(num1);
-}
-else if (num1 == num2)
-{
-    Console.WriteLine('Цифры равны');
+    Console.WriteLine("Вы ввели не трехзначное число");
 }
 else
 {
-    Console.WriteLine(num2);
+    Console.WriteLine(InCenter(number));
+}
+
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int InCenter(int a)
+{
+    int result = ((a / 10) % 10);
+    return result;
 }
