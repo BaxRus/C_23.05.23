@@ -1,24 +1,35 @@
-﻿// Напишите программу, которая выводит
-//  случайное число из отрезка [10, 99]
-//   и показывает наибольшую цифру числа.
-// Например:
-// 78 -> 8    78/10=7;  78%10=8;
-// 12-> 2
-// 85 -> 8
-int num = new Random().Next(10,100);
-Console.WriteLine(num);
+﻿// Задача 13: Напишите программу, которая выводит третью цифру
+// заданного числа или сообщает, что третьей цифры нет.
+// 645 -> 5
+// 78 -> третьей цифры нет
+// 32679 -> 6
 
-int num1= num/10;
-int num2 = num%10;
-if (num1 > num2)
+int number = ReadInt("Введите число: ");
+int count = number.ToString().Length;
+Console.Write(MakeArray(number, count));
+
+int ReadInt(string message)
 {
-    Console.WriteLine(num1);
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
-else if (num1 == num2)
+
+int MakeArray(int a, int b)
 {
-    Console.WriteLine('Цифры равны');
-}
-else
-{
-    Console.WriteLine(num2);
+int result = 0;
+    if (b < 3)
+    {
+        Console.Write("Третьей цифры нет, держи: ");
+    }
+    else
+    {
+        int c = 1;
+        for (int i = b; i > 3; i--)
+        {
+            c = c * 10;
+        }
+
+        result = (a / c) % 10;
+    }
+return result;
 }
