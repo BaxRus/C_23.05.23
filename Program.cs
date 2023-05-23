@@ -1,18 +1,21 @@
-﻿// Напишите программу, которая выводит
-//  случайное число из отрезка [10, 99]
-//   и показывает наибольшую цифру числа.
-// Например:
-// 78 -> 8    78/10=7;  78%10=8;
-// 12-> 2
-// 85 -> 8
-int num = new Random().Next(10,100);
-Console.WriteLine(num);
+﻿// Напишите программу, которая принимает
+//  на вход два числа и проверяет, является
+//  ли одно число квадратом другого.
 
-int num1= num/10;
-int num2 = num%10;
-if (num1 > num2)
+// 5, 25  ->  да
+// -4, 16  ->  да
+// 25, 5  ->  да
+// 8,9  ->  нет
+
+Console.WriteLine("Введите число");
+int num1=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите число");
+int num2=Convert.ToInt32(Console.ReadLine());
+
+if ((num1 == num2*num2) || (num2 == num1*num1))
 {
-    Console.WriteLine(num1);
+    Console.WriteLine("Да");
 }
 else if (num1 == num2)
 {
@@ -20,5 +23,5 @@ else if (num1 == num2)
 }
 else
 {
-    Console.WriteLine(num2);
+   Console.WriteLine("Нет");
 }
